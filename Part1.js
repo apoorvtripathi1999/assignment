@@ -6,14 +6,29 @@ const background = document.querySelector(".container-main")
 const uploadBtn =  document.querySelector(".upload-btn")
 const upload = document.querySelector("input")
 const logo = document.querySelector(".logo-img")
+const loader = document.querySelector(".loader")
+const uploadImg = document.querySelector(".upload-img")
+const loaderBottom = document.querySelector(".loader-bottom")
 
 upload.addEventListener("change", handleUpload)
 
 function handleUpload()
 {
-    const files = upload.files
-    logo.src = URL.createObjectURL(files[0])
-    logo.style.opacity = 1
+    uploadImg.style.display = "none"
+    loader.style.display = "block"
+    photo.style.display = "none"
+    loaderBottom.style.display = "block"
+    logo.style.display = "none"
+    setTimeout(() => {
+        logo.style.display = "block"
+        loaderBottom.style.display = "none"
+        loader.style.display = "none"
+        photo.style.display = "block"
+        uploadImg.style.display = "block"
+        const files = upload.files
+        logo.src = URL.createObjectURL(files[0])
+        logo.style.opacity = 1
+    }, 2000);
 }
 
 function setActiveBtn(btnColor)
@@ -47,23 +62,47 @@ function handleClick(color)
 {
     if(color === 'blue')
     {
+       loader.style.display = "block"
+       photo.style.display = "none"
+       logo.style.display = "none"
+       setTimeout(() => {
+       logo.style.display = "block"
+       loader.style.display = "none"
+       photo.style.display = "block"
        photo.src="./images/Blue umbrella.png"
        background.style.backgroundColor="lightblue"
        setActiveBtn("blue")
        setColorOfUpload("rgb(142, 175, 186)")
+       }, 2000);
     }
     if(color === 'pink')
     {
-        photo.src="./images/Pink umbrella.png"
-        background.style.backgroundColor="pink"
-        setActiveBtn("pink")
-        setColorOfUpload("rgb(232, 175, 185)")
+        loader.style.display = "block"
+        photo.style.display = "none"
+        logo.style.display = "none"
+        setTimeout(() => {
+            logo.style.display = "block"
+            loader.style.display = "none"
+            photo.style.display = "block"
+            photo.src="./images/Pink umbrella.png"
+            background.style.backgroundColor="pink"
+            setActiveBtn("pink")
+            setColorOfUpload("rgb(232, 175, 185)")
+        }, 2000);
     }
     if(color === 'yellow')
     {
-        photo.src="./images/Yello umbrella.png"
-        background.style.backgroundColor="yellow"
-        setActiveBtn("yellow")
-        setColorOfUpload("rgb(232, 232, 4)")
+        loader.style.display = "block"
+        photo.style.display = "none"
+        logo.style.display = "none"
+        setTimeout(() => {
+            logo.style.display = "block"
+            loader.style.display = "none"
+            photo.style.display = "block"
+            photo.src="./images/Yello umbrella.png"
+            background.style.backgroundColor="yellow"
+            setActiveBtn("yellow")
+            setColorOfUpload("rgb(232, 232, 4)")  
+        }, 2000);
     }
 }
