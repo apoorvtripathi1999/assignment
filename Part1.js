@@ -65,7 +65,7 @@ function handleClick(color)
        loader.style.display = "block"
        photo.style.display = "none"
        logo.style.display = "none"
-       setTimeout(() => {
+       setTimeout(() => {    //using setTimeout intentionally for loader functionality
        logo.style.display = "block"
        loader.style.display = "none"
        photo.style.display = "block"
@@ -80,7 +80,7 @@ function handleClick(color)
         loader.style.display = "block"
         photo.style.display = "none"
         logo.style.display = "none"
-        setTimeout(() => {
+        setTimeout(() => {    //using setTimeout intentionally for loader functionality
             logo.style.display = "block"
             loader.style.display = "none"
             photo.style.display = "block"
@@ -95,7 +95,7 @@ function handleClick(color)
         loader.style.display = "block"
         photo.style.display = "none"
         logo.style.display = "none"
-        setTimeout(() => {
+        setTimeout(() => {    //using setTimeout intentionally for loader functionality
             logo.style.display = "block"
             loader.style.display = "none"
             photo.style.display = "block"
